@@ -1,9 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField, RadioField, SelectField
-from wtforms.fields.core import Label, SelectMultipleField
-from wtforms.fields.simple import PasswordField
+from wtforms.fields import  SelectMultipleField, PasswordField
 from wtforms.validators import DataRequired
-from wtforms.widgets.core import Select
 
 class find_recipe(FlaskForm):
     search = SelectField('Search by:', choices=[('Recipe Name', 'Recipe Name'), ('Diet', 'Diet'), ('Servings', 'Servings'), ('Calories', 'Calories'), ('Cost', 'Cost')], validators=[DataRequired()])
