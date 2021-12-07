@@ -42,17 +42,17 @@ def meal_picker():
                 # If filtering by Servings Size
                 elif form.search.data == 'Servings':
                     servings = form.serving_size.data
-                    sql = str('SELECT * FROM Recipe WHERE Servings >= '  + servings)
+                    sql = 'SELECT * FROM Recipe WHERE Servings >= '  + str(servings)
 
                 # If filtering by Calories
                 elif form.search.data == 'Calories':
                     calories = form.calories.data
-                    sql = 'SELECT * FROM Recipe WHERE Calories <= '  + calories
+                    sql = 'SELECT * FROM Recipe WHERE Calories <= '  + str(calories)
 
                 # If filtering by Cost
                 else:
                     cost = form.cost.data
-                    sql = 'SELECT * FROM Recipe WHERE Cost <= ' + cost
+                    sql = 'SELECT * FROM Recipe WHERE Cost <= ' + str(cost)
                 
                 cursor.execute(sql)
                 result = cursor.fetchall()
