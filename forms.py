@@ -18,6 +18,10 @@ class find_ingredients(FlaskForm):
     category = SelectField('Select Category to look at:', choices=['Chicken', 'Beef', 'Dairy', 'Fruit', 'Grain', 'Nut', 'Sauce', 'Vegatable'])
     submit = SubmitField('Submit')
 
+class customForm():
+    sqlQuery = StringField('Enter your SQL Query', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
 class create_user_form(FlaskForm):
     name = StringField('Enter a unique Username', validators=[DataRequired()])
     birthYear = IntegerField('What year were you born?', validators=[DataRequired()])

@@ -2,6 +2,7 @@ from flask import Flask, render_template, flash, redirect, request, session
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 import pymysql.cursors
+from wtforms import form
 from tables import *
 from forms import *
 
@@ -12,7 +13,7 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 
-user = {"username": "abc", "password": "xyz"}
+user = {"username": "bob36", "password": "pass"}
 
 
 
@@ -92,6 +93,9 @@ def ingredient_picker():
                     return render_template('ingredient_results.html', table=table)
 
     return render_template('ingredient.html', form=form)
+
+
+    
 
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
