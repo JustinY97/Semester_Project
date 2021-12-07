@@ -31,15 +31,14 @@ def meal_picker():
             with connection.cursor() as cursor:
                 # If filtering by diet requirements
                 if form.search.data == 'Diet':
-                    diet = str(form.recipe_focus.data)
-                    if diet == 'None':
-                        sql = str('SELECT * FROM Recipe')
-                    else:
-                        sql = str('SELECT * FROM Recipe WHERE Diet=\'' + diet + '\'')
+                    diet = str(form.recipe_focus.data)   
+                    sql = str('SELECT * FROM Recipe WHERE Diet=\'' + diet + '\'')
+                    
                 # If formatting by Recipe Name
                 elif form.search.data == 'Recipe Name':
                     name = form.recipe_Name.data
-                    sql = str('SELECT * FROM Recipe WHERE RecipeName LIKE \'%' + name + '\'%')
+                    sql = str('SELECT * FROM Recipe WHERE RecipeName LIKE \'%' + name + '%\'')
+                    #sql = str('SELECT * FROM Ingredient WHERE IngredientName LIKE \'%' + ingredientName + '%\'')
 
                 # If filtering by Servings Size
                 elif form.search.data == 'Servings':
