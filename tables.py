@@ -25,3 +25,8 @@ class IngredientResults(Table):
     calories = Col("Calories")
     ServingSize = Col("Serving Size")
     cost = Col("Cost")
+
+class goalsTable(Table):
+    Startline = Col("Start Date")
+    Deadline = Col("End Date")
+    progress = Col("Progress")
