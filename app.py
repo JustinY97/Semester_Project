@@ -131,7 +131,7 @@ def dashboard():
                 result = cursor.fetchall()
                 table2 = mealsTable(result)
 
-        return render_template('dashboard.html', user=user['username'], table=table)
+        return render_template('dashboard.html', user=user['username'], table=table, mealTable=table2)
     else:
         return redirect('/login')
 
