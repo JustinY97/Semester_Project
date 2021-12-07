@@ -1,0 +1,48 @@
+
+/////////////////////// old ;Missing Password
+
+INSERT INTO Users VALUES ('coolcatz', '1990-02-13', 31, 'male', 350, 66, 'No Activity', 'Vegan', 150, 3000); 
+INSERT INTO Users VALUES ('broski26', '1998-02-10', 23, 'male', 265, 62, 'Slightly Active', 'None', 130, 2500);
+INSERT INTO Users VALUES ('fishy123', '1998-06-12', 27, 'female', 265, 67, 'Very Active', 'Vegetarian', 120, 2500);
+INSERT INTO Users VALUES ('dogs56', '1970-06-15', 61, 'female', 160, 59, 'Very Active', 'Vegan', 180, 3000);
+INSERT INTO Users VALUES ('kittyKat36', '1999-02-10', 22, 'male', 290, '64', 'Slightly Active', 'None', 160, 3500);
+INSERT INTO Users VALUES ('yoyo89', '1991-02-10', 30, 'male', 265, '61', 'Very Active', 'None', 190, 3200);
+
+INSERT INTO Users VALUES ('whale4lyfe', '1992-02-10', 29, 'female', 130, 65, 'No Activity', 'Vegan', 210, 2200);
+INSERT INTO Users VALUES ('Rob29', '1998-02-10', 23, 'male', 150, 67, 'Slightly Active', 'Vegetarian', 240, 2400);
+INSERT INTO Users VALUES ('janet15', '1998-02-10', 23, 'male', 190, 61, 'No Activity', 'None', 230, 2750);
+
+
+
+///////////////////// 
+
+INSERT INTO Meal VALUES (1, 'Rob29', '2021-12-01', 'Paleo', 2400, 20);
+INSERT INTO Meal VALUES (2, 'janet15', '2021-12-01', 'Paleo', 2750, 15);
+INSERT INTO Meal VALUES (3, 'whale4lyfe', '2021-12-01', 'Paleo', 2200, 16);
+INSERT INTO Meal VALUES (4, 'yoyo89', '2021-12-01', 'Keto', 500, 14);
+INSERT INTO Meal VALUES (5, 'kittyKat36', '2021-12-01', 'Pescatarian', 400, 16);
+INSERT INTO Meal VALUES (6, 'dogs56', '2021-12-01', 'Vegan', 600, 13);
+INSERT INTO Meal VALUES (7, 'fishy123', '2021-12-01', 'Keto', 450, 20);
+INSERT INTO Meal VALUES (8, 'broski26', '2021-12-01', 'Keto', 550, 14);
+INSERT INTO Meal VALUES (9, 'coolcatz', '2021-12-01', 'Vegan', 450, 18);
+
+INSERT INTO Recipe VALUES ('Lasagna', 6, 'None', 700, 13, 60);
+INSERT INTO Recipe VALUES ('Stir Fry', 4, 'Vegan', 600, 15, 30);
+INSERT INTO Recipe VALUES ('Chicken & Dumplings', 4, 'None', 800, 15, 45);
+INSERT INTO Recipe VALUES ('Pasta Salad', 5, 'Vegetarian', 620, 15, 20);
+INSERT INTO Recipe VALUES ('Pot Roast', 6, 'None', 500, 20, 120);
+INSERT INTO Recipe VALUES ('Sweet Potato Casserole', 5, 'Vegan', 550, 17, 36);
+INSERT INTO Recipe VALUES ('Alfredo', 4, 'Vegan', 700, 20, 45);
+INSERT INTO Recipe VALUES ('Chicken Parm', 3, 'None', 400, 13, 30);
+INSERT INTO Recipe VALUES ('Green Bean Casserole', 6, 'Vegetarian', 600, 22, 50);
+
+INSERT INTO Goal VALUES (1, 'Rob29', '2021-12-01', '2022-03-04', 20, 'loss', 2, 0 );
+INSERT INTO Goal VALUES (2, 'janet15', '2021-06-01', '2022-12-10', 50, 'loss', 1, 75 );
+INSERT INTO Goal VALUES (3, 'whale4lyfe', '2021-07-01', '2022-06-04', 100, 'loss', 3, 35 );
+INSERT INTO Goal VALUES (4, 'dogs56', '2021-08-15', '2021-12-04', 10, 'gain', 2, 95 );
+INSERT INTO Goal VALUES (5, 'yoyo89', '2021-03-18', '2021-12-24', 30, 'gain', 3, 82 );
+INSERT INTO Goal VALUES (5, 'kittyKat36', '2021-12-02', '2021-05-22', 40, 'loss', 1, 15 );
+
+
+
+

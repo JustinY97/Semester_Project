@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%block head %}
+<head>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/base.css')}}" >
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/picker.css')}}" >
+    <title>Ingredients</title>
+
+</head>
+{%endblock %}
+
+{% block page_content %}
+{{ wtf.quick_form(form) }}
+{% endblock %}

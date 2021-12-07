@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{%block head %}
+<head>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/base.css')}}" >
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/home.css')}}" >
+    <title>JACT Meal Prep</title>
+
+</head>
+{%endblock %}
+
+
+{% block page_content %}
+<div>
+    <div class='main-header'>
+        <img src="{{ url_for('static', filename='images/Logo_noback.png') }} ">
+        <h1>JACT Meal Prep</h1>
+    </div>
+    <h2>Welcome!</h2>
+    <p>Hello, welcome to your Meal Prep and Calorie Tracking Tool. This application will allow you to set your needs for a caloric surplus or deficit. It also serves as a budgeting tool 
+        given a certain dollar amount it returns recipes from the ingredients you specify! From putting on muscle mass to a weight loss our app will keep you on track! You can also specify certain 
+        ingredients with certain nutrition values and it will return recipes meeting those specifics.</p>
+</div>
+{% endblock %}

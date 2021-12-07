@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{%block head %}
+<head>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/base.css')}}" >
+    <title>JACT Meal Prep</title>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/results.css')}}" >
+
+</head>
+{%endblock %}
+{% block content %}
+{{ table }}
+<button><a href ='/ingredients'>Run another Search</a></button>
+{% endblock %}

@@ -1,0 +1,43 @@
+<html>
+    {% extends "bootstrap/base.html" %}
+
+    {%block head %}
+    <head>
+        <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/base.css')}}" >
+        <title>JACT Meal Prep</title>
+
+    </head>
+    {%endblock %}
+
+    <body>
+        {% block navbar %}
+        <div>
+            <div class="navbar">
+                <ul>
+                    <nav>
+                        <img src="{{ url_for('static', filename='images/Logo_nowords.png') }}">
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='/recipes'>Recipes</a></li>
+                        <li><a href='/ingredients'>Ingredients</a></li>
+                        <li><a href='/dashboard'>Dashoard</a></li>
+                        <li><a href='/login'>Login</a></li>
+                        <li><a href='/logout'>Logout</a></li>
+                    </nav>
+                </ul>
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block content %}
+        <div class='container'>
+            {% block page_content %}
+            {% endblock %}
+        </div>
+        {% endblock %}
+
+        {% block scripts %}
+        {{ super() }}
+        {{ moment.include_moment() }}
+        {% endblock %}
+    </body>
+</html>
