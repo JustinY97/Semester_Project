@@ -30,3 +30,8 @@ class goalsTable(Table):
     Startline = Col("Start Date")
     Deadline = Col("End Date")
     progress = Col("Progress")
+
+class mealsTable(Table):
+    Date = Col("Meal Date")
+    calories = Col("Cal")
+    cost = Col('Cost')

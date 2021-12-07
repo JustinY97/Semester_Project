@@ -122,7 +122,18 @@ def dashboard():
                 cursor.execute(sql)
                 result = cursor.fetchall()
                 table = goalsTable(result)
-        return render_template('dashboard.html', user=user['username'], table=table)
+                connection.close()
+                
+        connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
+
+        sql = 'SELECT Date, calories, cost FROM Meal WHERE username=\'' + session['user'] + '\''
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql)
+                result = cursor.fetchall()
+                table2 = mealsTable(result)
+
+        return render_template('dashboard.html', user=user['username'], table=table, table2=table2)
     else:
         return redirect('/login')
 
