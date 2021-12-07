@@ -131,7 +131,7 @@ def dashboard():
                 cursor.execute(sql)
                 result = cursor.fetchall()
                 table2 = mealsTable(result)
-                table.border = True
+                table2.border = True
 
         return render_template('dashboard.html', user=user['username'], table=table, mealTable=table2)
     else:
