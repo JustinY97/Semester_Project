@@ -1,4 +1,5 @@
 from flask import Flask, render_template, flash, redirect, request, session
+from datetime import datetime
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 import pymysql.cursors
@@ -150,7 +151,7 @@ def logout():
 @app.route('/create_account')
 def createUser():
     form = create_user_form()
-    date = str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay)
+    date = datetime.strptime(str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay), '%Y-%m-%d')
     sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date, form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
     
     connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
