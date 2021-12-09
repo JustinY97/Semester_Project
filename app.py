@@ -151,7 +151,7 @@ def logout():
 @app.route('/create_account')
 def createUser():
     form = create_user_form()
-    date = datetime(int(form.birthYear.data), int(form.birthMonth.data), int(form.birthDay.data))
+    date = datetime(int(str(form.birthYear.data)), int(str(form.birthMonth.data)), int(str(form.birthDay.data)))
     sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, str(date), form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
     
     connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
