@@ -147,7 +147,7 @@ def dashboard():
 #Step -6(creating route for logging out)
 @app.route('/logout')
 def logout():
-    if('user' in session and session['user'] == user['username']):
+    if('user' in session):
         session.pop('user')         
         return redirect('/login')
     else:
