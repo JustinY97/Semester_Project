@@ -181,7 +181,7 @@ def createUser():
                     cursor.execute(sql)
                     connection.commit()
                     
-                    connection.close()
+                    
 
         return redirect('/dashboard')
 
