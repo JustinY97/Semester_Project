@@ -159,7 +159,7 @@ def createUser():
         month = form.birthMonth.data
         day = form.birthDay.data
         date = dt.datetime(year, month, day)
-        sql = str('CALL NewUser(%s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date.strftime("%B"), form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
+        sql = str('CALL NewUser(%s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date.strftime("%B"), form.gender.data, form.weight.data, form.height.data, str(form.activity.data), form.diet.data, form.budget.data))
         
         with connection:
                 with connection.cursor() as cursor:
