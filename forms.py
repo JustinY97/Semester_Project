@@ -28,7 +28,7 @@ class create_user_form(FlaskForm):
     birthYear = IntegerField('What year were you born?', validators=[DataRequired()])
     birthMonth = IntegerField('What month were you born?', validators=[DataRequired()])
     birthDay = IntegerField('What day of the month were you born?',validators=[DataRequired()])
-    gender = RadioField('What is your gender', choices=[('Male', 'Male'),('Female','Female'),('Other','Other')], validators=[DataRequired()])
+    gender = RadioField('What is your gender', choices=[('male', 'Male'),('female','Female')], validators=[DataRequired()])
     weight = IntegerField("Enter your weight", validators=[DataRequired()])
     height = IntegerField("How tall are you in inches", validators=[DataRequired()])
     activity = SelectField('Pick the activity level that best describes you', choices=[('No Activity', 'No Activity'), ('Slightly Active','Slightly Active'), ('Very Active', 'Very Active')], validators=[DataRequired()])
