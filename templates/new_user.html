@@ -1,0 +1,16 @@
+{ %extends 'base.html' %}
+
+{% block head %}
+<head>
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/base.css')}}" >
+    <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/home.css')}}" >
+    <title>New User</title>
+
+</head>
+{% endblock %}
+
+{% blck page_content %}
+<div>
+    {{form}}
+</div>
+{% endblock %}
