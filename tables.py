@@ -35,3 +35,4 @@ class mealsTable(Table):
     Date = Col("Meal Date")
     calories = Col("Cal")
     cost = Col('Cost')
+    Diet = Col('Diet')

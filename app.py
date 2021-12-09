@@ -13,7 +13,7 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 
-user = {"username": "bob36", "password": "pass"}
+user = {"username": "Rob29", "password": "computer 1"}
 
 
 
@@ -125,7 +125,7 @@ def dashboard():
                 table.border = True
         
         connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
-        sql = 'SELECT Date, calories, cost FROM Meal WHERE username=\'' + session['user'] + '\''
+        sql = 'SELECT Date, calories, cost, Diet FROM Meal WHERE username=\'' + session['user'] + '\''
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute(sql)
@@ -154,5 +154,7 @@ def createUser():
 @app.route('/create_account')
 def createUser():
     form = create_user_form()
-    date = str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay)
-    sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date, form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
+    #date = str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay)
+    #sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date, form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
+    
+    return render_template('new_user.html', form=form)
