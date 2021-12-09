@@ -14,7 +14,7 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 
-user = {"username": "Rob29", "password": "computer 1"}
+#user = {"username": "Rob29", "password": "computer 1"}
 
 
 
@@ -102,20 +102,26 @@ def ingredient_picker():
 def login():
     if(request.method == 'POST'):
         username = request.form.get('username')
-        password = request.form.get('password')     
-        if username == user['username'] and password == user['password']:
-            
-            session['user'] = username
-            return redirect('/dashboard')
-        
-        return "<h1>Wrong username or password</h1>" 
+        password = request.form.get('password')
+
+        connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
+        with connection:
+            with connection.cursor() as cursor:
+                sql = 'SELECT password FROM User WHERE username=\'' + username + '\''
+                cursor.execute(sql)
+                result = cursor.fetchone()
+                if password == result[0]:
+                    session['user'] = username
+                    return redirect('/dashboard')
+                else :
+                    return "<h1>Wrong username or password</h1>" 
 
     return render_template("login.html")
 
 #Step -5(creating route for dashboard and logout)
 @app.route('/dashboard')
 def dashboard():
-    if('user' in session and session['user'] == user['username']):
+    if('user' in session):
         sql = 'SELECT * FROM GoalCalView WHERE USERNAME =\'' + session['user'] + '\''
         connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
         with connection:
@@ -134,7 +140,7 @@ def dashboard():
                 table2 = mealsTable(result)
                 table2.border = True
 
-        return render_template('dashboard.html', user=user['username'], table=table, mealTable=table2)
+        return render_template('dashboard.html', user=session['user'], table=table, mealTable=table2)
     else:
         return redirect('/login')
 
