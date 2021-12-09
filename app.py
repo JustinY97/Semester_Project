@@ -164,5 +164,6 @@ def createUser():
         with connection:
                 with connection.cursor() as cursor:
                     cursor.execute(sql)
+                    cursor.commit()
 
     return render_template('new_user.html', form=form)
