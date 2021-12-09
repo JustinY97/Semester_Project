@@ -155,7 +155,7 @@ def createUser():
     
     connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
 
-    if form.validate():
+    if form.validate_on_submit():
         with connection:
                 with connection.cursor() as cursor:
                     cursor.execute(sql)
