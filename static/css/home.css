@@ -7,6 +7,6 @@
     margin: auto, auto;
 }
 
-div {
-    width: fit-content;
+.main-header div {
+    margin: auto;
 }
