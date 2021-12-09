@@ -151,7 +151,7 @@ def logout():
 @app.route('/create_account')
 def createUser():
     form = create_user_form()
-    year = int(form.birthYear.data)
+    year = int(str(form.birthYear.data))
     month = int(form.birthMonth.data)
     day = int(form.birthDay.data)
     date = dt.datetime(year, month, day)
