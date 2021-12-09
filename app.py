@@ -151,10 +151,3 @@ def createUser():
     form = create_user_form()
     return render_template('create_user.html', form=form)
 
-@app.route('/create_account')
-def createUser():
-    form = create_user_form()
-    #date = str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay)
-    #sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date, form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
-    
-    return render_template('new_user.html', form=form)
