@@ -27,7 +27,7 @@ class create_user_form(FlaskForm):
     password = PasswordField('Enter a password', validators=[DataRequired()])
     birthYear = IntegerField('What year were you born?', validators=[DataRequired()])
     birthMonth = IntegerField('What month were you born?', validators=[DataRequired()])
-    birthDay = IntegerField('What day of the month were you born?', validators=[DataRequired()])
+    birthDay = IntegerField('What day of the month were you born?',validators=[DataRequired()])
     gender = RadioField('What is your gender', choices=[('Male', 'Male'),('Female','Female'),('Other','Other')], validators=[DataRequired()])
     weight = IntegerField("Enter your weight", validators=[DataRequired()])
     height = IntegerField("How tall are you in inches", validators=[DataRequired()])
