@@ -151,9 +151,9 @@ def logout():
 @app.route('/create_account')
 def createUser():
     form = create_user_form()
-    year = form.birthYear.data
-    month = form.birthMonth.data
-    day = form.birthDay.data
+    year = int(form.birthYear.data)
+    month = int(form.birthMonth.data)
+    day = int(form.birthDay.data)
     date = dt.datetime(year, month, day)
     sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date.strftime("%B"), form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
     
