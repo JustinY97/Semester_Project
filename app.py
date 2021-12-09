@@ -107,7 +107,7 @@ def login():
         connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
         with connection:
             with connection.cursor() as cursor:
-                sql = 'SELECT password FROM User WHERE username=\'' + username + '\''
+                sql = 'SELECT password FROM Users WHERE username=\'' + username + '\''
                 cursor.execute(sql)
                 result = cursor.fetchone()
                 if password == result[0]:
