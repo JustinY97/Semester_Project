@@ -141,7 +141,7 @@ def dashboard():
                 table2.border = True
 
         connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
-        sql = 'SELECT * FROM NormCalView WHERE username=\'' + session['user'] + '\''
+        sql = 'SELECT * FROM NormDailyCalView WHERE username=\'' + session['user'] + '\''
         with connection:
             with connection.cursor() as cursor:
                 cursor.execute(sql)
