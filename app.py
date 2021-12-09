@@ -140,7 +140,16 @@ def dashboard():
                 table2 = mealsTable(result)
                 table2.border = True
 
-        return render_template('dashboard.html', user=session['user'], table=table, mealTable=table2)
+        connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
+        sql = 'SELECT * FROM NormCalView WHERE username=\'' + session['user'] + '\''
+        with connection:
+            with connection.cursor() as cursor:
+                cursor.execute(sql)
+                result = cursor.fetchall()
+                table3 = dailyCals(result)
+                table3.border = True
+
+        return render_template('dashboard.html', user=session['user'], table=table, mealTable=table2, calorieTable=table3)
     else:
         return redirect('/login')
 

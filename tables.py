@@ -42,3 +42,14 @@ class mealsTable(Table):
     calories = Col("Cal")
     cost = Col('Cost')
     Diet = Col('Diet')
+
+class dailyCals(Table):
+    username = Col("User Name")
+    DOB = Col("Date of Birth")
+    Age = Col("Age")
+    gender = Col("Gender")
+    weight = Col("Weight")
+    height = Col("Height")
+    activity =Col("Activity")
+    Diet = Col("Diet")
+    DailyCalorie = Col("Daily Calories")
