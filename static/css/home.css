@@ -6,3 +6,7 @@
 .main-header h1{
     margin: auto, auto;
 }
+
+div {
+    width: fit-content;
+}
