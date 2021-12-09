@@ -27,9 +27,15 @@ class IngredientResults(Table):
     cost = Col("Cost")
 
 class goalsTable(Table):
+    username = Col("User Name")
+    amount = Col("Goal Amount")
+    WeeklyGoal = Col("Weekly Goal")
     Startline = Col("Start Date")
     Deadline = Col("End Date")
+    type = Col("Goal Type")
     progress = Col("Progress")
+    weight = Col()
+    DailyGoalCalorie = Col("Daily Calorie Goal")
 
 class mealsTable(Table):
     Date = Col("Meal Date")
