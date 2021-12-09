@@ -34,7 +34,7 @@ class goalsTable(Table):
     Deadline = Col("End Date")
     type = Col("Goal Type")
     progress = Col("Progress")
-    weight = Col()
+    weight = Col("Weight")
     DailyGoalCalorie = Col("Daily Calorie Goal")
 
 class mealsTable(Table):
