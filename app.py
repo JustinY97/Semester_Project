@@ -116,7 +116,7 @@ def login():
 @app.route('/dashboard')
 def dashboard():
     if('user' in session and session['user'] == user['username']):
-        sql = 'SELECT * FROM GOALVIEW WHERE USERNAME =\'' + session['user'] + '\''
+        sql = 'SELECT * FROM GoalCalView WHERE USERNAME =\'' + session['user'] + '\''
         connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
         with connection:
             with connection.cursor() as cursor:
