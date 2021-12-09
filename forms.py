@@ -32,6 +32,6 @@ class create_user_form(FlaskForm):
     weight = IntegerField("Enter your weight", validators=[DataRequired()])
     height = IntegerField("How tall are you in inches", validators=[DataRequired()])
     activity = SelectField('Pick the activity level that best describes you', choices=[('No Activity', 'No Activity'), ('Slightly Acive','Slightly Active'),('Moderately Active', 'Moderatley Active'), ('Very Active', 'Very Active')], validators=[DataRequired()])
-    diet = SelectMultipleField('Are ther any dietary restrictions you have', choices=[('Vegan','Vegan'),('Vegetarian','Vegetarian')], validators=[DataRequired()])
+    diet = SelectField('Are ther any dietary restrictions you have', choices=[('Vegan','Vegan'),('Vegetarian','Vegetarian'),('None', 'None')], default='None', validators=[DataRequired()])
     budget = IntegerField('What is your weekly food budget', validators=[DataRequired()])
     submit = SubmitField('Submit')
