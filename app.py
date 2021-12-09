@@ -148,7 +148,7 @@ def logout():
         return redirect('/login')
 
 
-@app.route('/create_account', methods = ['POST', 'GET'])
+@app.route('/create_account', methods=['GET', 'POST'])
 def createUser():
     form = create_user_form()
   
