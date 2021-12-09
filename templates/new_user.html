@@ -1,13 +1,12 @@
-{ %extends 'base.html' %}
-
-{% block head %}
+{% extends "base.html" %}
+{%block head %}
 <head>
     <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/base.css')}}" >
     <link rel='stylesheet' type='text/css' href="{{url_for('static' ,filename='css/home.css')}}" >
-    <title>New User</title>
+    <title>Dashboard</title>
 
 </head>
-{% endblock %}
+{%endblock %}
 
 {% blck page_content %}
 <div>

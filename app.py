@@ -150,7 +150,14 @@ def logout():
 @app.route('/create_account')
 def createUser():
     form = create_user_form()
-    #date = str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay)
-    #sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date, form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
+    date = str(form.birthYear.data + '-' + form.birthMonth.data + '-' + form.birthDay)
+    sql = str('EXECUTE NewUser(%s, %s, %s, %s, %s, %d, %d, %s, %s, %d)' % (form.name.data, form.password.data, date, form.gender.data, form.weight.data, form.height.data, form.activity.data, form.diet.data, form.budget.data))
     
+    connection = pymysql.connect(host='cmsc508projectdb.colnzg9d22sk.us-east-2.rds.amazonaws.com',user='master', password='CMSC508Project', database='CMSC508Project', cursorclass=pymysql.cursors.DictCursor)
+
+    if form.validate():
+        with connection:
+                with connection.cursor() as cursor:
+                    cursor.execute(sql)
+
     return render_template('new_user.html', form=form)
