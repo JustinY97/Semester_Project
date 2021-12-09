@@ -110,7 +110,7 @@ def login():
                 sql = 'SELECT password FROM Users WHERE username=\'' + username + '\''
                 cursor.execute(sql)
                 result = cursor.fetchone()
-                if password == result[0]:
+                if password == result['password']:
                     session['user'] = username
                     return redirect('/dashboard')
                 else :
