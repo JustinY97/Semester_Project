@@ -30,7 +30,7 @@ li{
     list-style: none;
 }
 
-a {
+.navbar a {
     color: white;
     text-decoration: none;
 }
