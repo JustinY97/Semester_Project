@@ -1,6 +1,9 @@
 table{
     width: fit-content;
 }
+table th{
+    width: fit-content;
+}
 table col{
     width: fit-content;
 }
